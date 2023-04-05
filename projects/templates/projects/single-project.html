@@ -5,5 +5,12 @@
 <br>
 <p>Title is {{project.title}}</p>
 <br>
+
+<hr>
+{% for tag in tags %}
+    <span style="border:1px solid red">{{tag}}</span>
+{% endfor %}
+<hr>
+
 <p>More info---{{project.description}}</p>
 {% endblock content %}

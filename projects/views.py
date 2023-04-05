@@ -30,9 +30,11 @@ def projects(request):
 
 def project2(request,pk):
     #print("the parameter that you passed is "+pk)
-    projectObj = None
-    for i in projectsList:
-        if i['id'] == pk:
-            projectObj = i
-    return render(request, 'projects/single-project.html',{'project':projectObj})
+    # projectObj = None
+    # for i in projectsList:
+    #     if i['id'] == pk:
+    #         projectObj = i
+    projectObj = Project.objects.get(id=pk)
+    tags = projectObj.tags.all()
+    return render(request, 'projects/single-project.html',{'project':projectObj, 'tags':tags})
 # Create your views here.
