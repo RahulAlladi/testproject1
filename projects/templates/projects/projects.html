@@ -3,7 +3,7 @@
 
 
     {% block content %}   
-    <h1>Projects Templates</h1> 
+    <!-- <h1>Projects Templates</h1> 
     you are on the {{message}} page
     {% if age > 18 %}
     <p>you are an adult</p>
@@ -11,18 +11,42 @@
     <p>you are an infant</p>
     {% else %}
     <p>you are not an adult</p>
-    {% endif %}
+    {% endif %} -->
+    <table>
+        <tr>
+                <!-- <th>ID</th> -->
+                <th>Project</th>
+                <th>Positive Votes %</th>
+                <th>Ratio</th>
+                <th>created date</th>
+        </tr>
+        
+            {% for project in projects %}
+            <tr>
+            <!-- <td>{{project.id}}</td> -->
+            <td>{{project.title}}</td>
+            <td>{{project.vote_ratio}}</td>
+            <td>{{project.vote_total}}</td>
+            <td>{{project.created}}</td>
+            <td><a href="{% url 'update-project' project.id %}">Edit</a></td>
+            <td><a href="{% url 'delete-project' project.id %}">Delete</a></td>
+            <td><a href="/project/{{project.id}}">{{project.title}}</a></td>
+            </tr>
+            {% endfor %}
+            
+        
+    </table>
 
     <ul>
         {% for project in projects %}
-        <li>id:{{project.id}} --- Title:<a href="/project/{{project.id}}">{{project.title}}</a>--- {{project.description}}</li>
+        <li>id:{{project.id}} --- Title:<a href="/project/{{project.id}}">{{project.title}}</a></li>
         {% endfor %}
     </ul>
-<p>Django  is a free and open-source, Python-based web framework that follows the
+<!-- <p>Django  is a free and open-source, Python-based web framework that follows the
     model–template–views (MTV) architectural pattern.[7][8] It is maintained by the
     Django Software Foundation (DSF),an independent organization established in the
-    US as a 501(c)(3) non-profit.</p>
-    {% include 'navbar.html' %}  
+    US as a 501(c)(3) non-profit.</p> -->
+    <!-- {% include 'navbar.html' %}   -->
     {% endblock content %}
 
   

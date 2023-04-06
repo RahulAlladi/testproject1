@@ -5,9 +5,13 @@
 <br>
 <p>Title is {{project.title}}</p>
 <br>
-
+<img style="max-width: 500px;" src="{{project.featured_image.url}}">
 <hr>
 {% for tag in tags %}
+    <span style="border:1px solid red">{{tag}}</span>
+{% endfor %}
+<hr>
+{% for tag in project.tags.all %}
     <span style="border:1px solid red">{{tag}}</span>
 {% endfor %}
 <hr>
