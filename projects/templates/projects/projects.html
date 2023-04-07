@@ -28,9 +28,9 @@
             <td>{{project.vote_ratio}}</td>
             <td>{{project.vote_total}}</td>
             <td>{{project.created}}</td>
-            <td><a href="{% url 'update-project' project.id %}">Edit</a></td>
-            <td><a href="{% url 'delete-project' project.id %}">Delete</a></td>
-            <td><a href="/project/{{project.id}}">{{project.title}}</a></td>
+            <td><a href="{% url 'update-project' project.id %}"> Edit</a></td>
+            <td><a href="{% url 'delete-project' project.id %}"> Delete</a></td>
+            <td><a href="/project/{{project.id}}"> {{project.title}}</a></td>
             </tr>
             {% endfor %}
             
@@ -46,7 +46,6 @@
     model–template–views (MTV) architectural pattern.[7][8] It is maintained by the
     Django Software Foundation (DSF),an independent organization established in the
     US as a 501(c)(3) non-profit.</p> -->
-    <!-- {% include 'navbar.html' %}   -->
     {% endblock content %}
 
   
